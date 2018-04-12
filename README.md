@@ -1,13 +1,3 @@
-![Moleculer logo](http://moleculer.services/images/banner.png)
-
-[![Build Status](https://travis-ci.org/Icebob/pattern.svg?branch=master)](https://travis-ci.org/Icebob/pattern)
-[![Coverage Status](https://coveralls.io/repos/github/Icebob/pattern/badge.svg?branch=master)](https://coveralls.io/github/Icebob/pattern?branch=master)
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/<----hash----->)](https://www.codacy.com/app/<---username---->/pattern?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Icebob/pattern&amp;utm_campaign=Badge_Grade)
-[![Code Climate](https://codeclimate.com/github/Icebob/pattern/badges/gpa.svg)](https://codeclimate.com/github/Icebob/pattern)
-[![David](https://img.shields.io/david/Icebob/pattern.svg)](https://david-dm.org/Icebob/pattern)
-[![Known Vulnerabilities](https://snyk.io/test/github/Icebob/pattern/badge.svg)](https://snyk.io/test/github/Icebob/pattern)
-[![Join the chat at https://gitter.im/moleculerjs/moleculer](https://badges.gitter.im/moleculerjs/moleculer.svg)](https://gitter.im/moleculerjs/moleculer?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-
 # Pattern matching feature  [![NPM version](https://img.shields.io/npm/v/pattern.svg)](https://www.npmjs.com/package/pattern)
 It is just a proof-of-concept middleware to monkey-patch Moleculer Broker in order to add pattern-matching routing for action calls.
 
@@ -25,7 +15,7 @@ const PatternMiddleware	= require("../../index");
 
 // Create broker
 const broker = new ServiceBroker({
-	logger: console,
+    logger: console,
 });
 
 broker.use(PatternMiddleware(broker));
@@ -34,18 +24,18 @@ broker.use(PatternMiddleware(broker));
 **Create service with patterns**
 ```js
 broker.createService({
-	name: "a",
-	actions: {
-		first: {
-			pattern: {
-				a: 0,
-				b: "x"
-			},
-			handler(ctx) {
-				return "Hello ${ctx.params.name}";
-			}
-		}
-	}
+    name: "a",
+    actions: {
+        first: {
+            pattern: {
+                a: 0,
+                b: "x"
+            },
+            handler(ctx) {
+                return "Hello ${ctx.params.name}";
+            }
+        }
+    }
 });
 ```
 
