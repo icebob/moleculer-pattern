@@ -8,9 +8,10 @@ It is just a proof-of-concept middleware to monkey-patch Moleculer Broker in ord
 ```
 
 ## Usage
+
 **Install**
 ```js
-const { ServiceBroker } 	= require("moleculer");
+const { ServiceBroker } = require("moleculer");
 const PatternMiddleware	= require("../../index");
 
 // Create broker
