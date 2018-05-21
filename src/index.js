@@ -38,15 +38,15 @@ function decorateBroker(broker) {
 	});
 
 
-	broker.act = (pattern, params, opts) => {
-		const epList = broker.$matcher.lookup(pattern);
+	broker.act = (params, opts) => {
+		const epList = broker.$matcher.lookup(params);
 		if (!epList || epList.count == 0)
-			return broker.Promise.reject(new E.ServiceNotFoundError(JSON.stringify(pattern)));
+			return broker.Promise.reject(new E.ServiceNotFoundError(JSON.stringify(params)));
 
 		const endpoint = epList.next();
 
 		if (!endpoint)
-			return broker.Promise.reject(new E.ServiceNotAvailable(JSON.stringify(pattern)));
+			return broker.Promise.reject(new E.ServiceNotAvailable(JSON.stringify(params)));
 
 		return broker.call(endpoint, params, opts);
 	};

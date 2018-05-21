@@ -25,7 +25,7 @@ broker.createService({
 
 broker.start().then(async () => {
 
-	const res = await broker.act({ a: 0, b: "x"}, { name: "John" });
+	const res = await broker.act({ a: 0, b: "x", name: "John" });
 	console.log(res); // "Hello John"
 
 	return broker.stop();

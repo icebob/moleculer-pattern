@@ -5,6 +5,7 @@ It is just a proof-of-concept middleware to monkey-patch Moleculer Broker in ord
 
 ## Install
 ```
+npm install icebob/moleculer-pattern
 ```
 
 ## Usage
@@ -42,7 +43,7 @@ broker.createService({
 
 **Call a service**
 ```js
-const res = await broker.act({ a: 0, b: "x"}, { name: "John" });
+const res = await broker.act({ a: 0, b: "x", name: "John" });
 console.log(res); // "Hello John"
 ```
 
