@@ -1,4 +1,4 @@
-# Pattern matching feature  [![NPM version](https://img.shields.io/npm/v/pattern.svg)](https://www.npmjs.com/package/pattern)
+# Pattern matching feature  [![NPM version](https://img.shields.io/npm/v/moleculer-pattern.svg)](https://www.npmjs.com/package/moleculer-pattern)
 It is just a proof-of-concept middleware to monkey-patch Moleculer Broker in order to add pattern-matching routing for action calls.
 
 ## Features
@@ -10,7 +10,7 @@ npm install icebob/moleculer-pattern
 
 ## Usage
 
-**Install**
+**Install middleware**
 ```js
 const { ServiceBroker } = require("moleculer");
 const PatternMiddleware	= require("../../index");
